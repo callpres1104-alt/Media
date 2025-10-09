@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Submission Success</title> 
+  <style> 
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 
+auto; padding: 20px; } 
+    p { margin-bottom: 20px; } 
+  </style> 
+</head> 
+<body> 
+ 
+  <h2>Thank You!</h2> 
+  <p>Your ad has been received. We'll review it and let you know how and when your ad will be displayed.</p> 
+ 
+  <script> 
+    const adData = JSON.parse(localStorage.getItem('adData')); 
+ 
+    if (adData) { 
+      // Send via Formspree, Getform, or backend 
+      fetch('https://formspree.io/f/myznnkej', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ 
+          title: adData.title, 
+          description: adData.description, 
+          file: adData.file 
+        }) 
+      }) 
+      .then(() => { 
+        console.log('Submission sent'); 
+        localStorage.removeItem('adData'); 
+      }) 
+      .catch(err => { 
+        console.error('Submission failed', err); 
+      }); 
+    } 
+  </script> 
+ 
+</body> 
+</html>
