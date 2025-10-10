@@ -15,7 +15,7 @@ white; border: none; cursor: pointer; }
 <body> 
  
   <h2>Adertise Across Our Media</h2> 
-  <p>Submit your ad content and pay to confirm your submission.(.jpg,.png,.pdf,.docx,.mp4,.mp3. Video attachments must be 1MB or less)</p> 
+  <p>Submit your ad content and pay to confirm your submission.(.jpg,.png,.pdf,.docx,.mp4,.mov. Video attachments must be 4MB or less)</p> 
  
   <form id="adForm"> 
     <input type="text" id="title" placeholder="Ad Title" required /> 
@@ -43,7 +43,7 @@ document.getElementById('description').value;
  // Optional file type validation
 const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4', 'audio/mpeg'];
 if (!allowedTypes.includes(file.type)) {
-  alert('File type not allowed. Please upload a JPG, PNG, PDF, MP4, or MP3.');
+  alert('File type not allowed. Please upload a JPG, PNG, PDF, MP4, or MOV.');
   return;
 }
       // Convert file to Base64 
