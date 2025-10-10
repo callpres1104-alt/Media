@@ -21,7 +21,7 @@ white; border: none; cursor: pointer; }
     <input type="text" id="title" placeholder="Ad Title" required /> 
     <textarea id="description" placeholder="Short Description" 
 rows="5" required></textarea> 
-    <input type="file" id="fileUpload" accept=".jpg,.png,.pdf,.docx,.mp4,.mov,video/quicktime" 
+    <input type="file" id="fileUpload" accept=".jpg,.png,.pdf,.docx,.mp4,.mov" 
 required /> 
     <button type="submit">Continue to Payment</button> 
   </form> 
@@ -41,9 +41,9 @@ document.getElementById('description').value;
         return; 
       } 
  // Optional file type validation
-const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4', 'audio/mpeg'];
+const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4','video/quicktime'  // <- for .mov];
 if (!allowedTypes.includes(file.type)) {
-  alert('File type not allowed. Please upload a .jpg,.png,.pdf,.docx,.mp4,.mov,video/quicktime');
+  alert('File type not allowed. Please upload a .jpg,.png,.pdf,.docx,.mp4,.mov');
   return;
 }
       // Convert file to Base64 
