@@ -40,7 +40,12 @@ document.getElementById('description').value;
         alert('Please upload a file.'); 
         return; 
       } 
- 
+ // Optional file type validation
+const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4', 'audio/mpeg'];
+if (!allowedTypes.includes(file.type)) {
+  alert('File type not allowed. Please upload a JPG, PNG, PDF, MP4, or MP3.');
+  return;
+}
       // Convert file to Base64 
       const reader = new FileReader(); 
       reader.onloadend = () => { 
