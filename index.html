@@ -41,7 +41,7 @@ document.getElementById('description').value;
         return; 
       } 
  // Optional file type validation
-const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4','video/quicktime'  // <- for .mov];
+const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/mp4';
 if (!allowedTypes.includes(file.type)) {
   alert('File type not allowed. Please upload a .jpg,.png,.pdf,.docx,.mp4');
   return;
